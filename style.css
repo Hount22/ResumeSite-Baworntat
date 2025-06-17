@@ -129,79 +129,6 @@ body {
   transition: var(--transition);
 }
 
-.footer-sound {
-  display: flex;
-  gap: 6px;
-  align-items: flex-end;
-  height: 40px;
-  padding: 0 10px;
-  cursor: pointer;
-  user-select: none;
-}
-
-.sbar {
-  display: block;
-  width: 6px;
-  background-color: #eee;
-  border-radius: 3px;
-  transform-origin: bottom center;
-  opacity: 0.7;
-}
-
-/* animation ปกติ - ปิด */
-.sbar {
-  animation-play-state: paused;
-}
-
-/* animation เมื่อเล่นเพลง */
-.playing #bar-1 {
-  animation-name: sound-bar;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  animation-delay: 0s;
-  background-color: #ff6f61;
-}
-
-.playing #bar-2 {
-  animation-name: sound-bar;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  animation-delay: 0.2s;
-  background-color: #ff8a65;
-}
-
-.playing #bar-3 {
-  animation-name: sound-bar;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  animation-delay: 0.4s;
-  background-color: #ffab91;
-}
-
-.playing #bar-4 {
-  animation-name: sound-bar;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  animation-delay: 0.6s;
-  background-color: #ffccbc;
-}
-
-@keyframes sound-bar {
-  0%, 100% {
-    transform: scaleY(1);
-    opacity: 0.7;
-  }
-  50% {
-    transform: scaleY(2.5);
-    opacity: 1;
-  }
-}
-
-
 /* Hero Section */
 .hero {
   min-height: 100vh;
@@ -249,7 +176,7 @@ body {
 .hero-description {
   font-size: 1.1rem;
   color: var(--text-secondary);
-  max-width: 600px;
+  max-width: 680px;
   margin-bottom: 2.5rem;
   line-height: 1.7;
 }
@@ -962,4 +889,181 @@ section {
 /* Smooth scrolling offset for fixed nav */
 section {
   scroll-margin-top: 80px;
+}
+
+
+
+#player {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px; /* ลดขนาดลง */
+  z-index: 9999;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  overflow: hidden;
+  font-family: 'Helvetica', sans-serif;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  height: 90px; /* สูงพอดี ไม่กินที่ */
+}
+
+#album-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 50%;
+}
+
+#album-art img.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Album art */
+#album-art {
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px #fff;
+  overflow: hidden;
+  position: relative;
+  transition: 0.3s ease all;
+}
+
+#album-art.active {
+  box-shadow: 0 0 0 3px #fff7f7, 0 20px 40px -10px #afb7c1;
+}
+
+/* Player track content */
+#player-track {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #54576f;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* Album and track name */
+#album-name {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#track-name {
+  font-size: 12px;
+  color: #acaebd;
+  margin: 3px 0 6px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Seek bar container */
+#seek-bar-container {
+  position: relative;
+  height: 4px;
+  background-color: #ffe8ee;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 3px;
+}
+
+/* Seek bar progress */
+#seek-bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  background-color: #fd6d94;
+  border-radius: 4px;
+  transition: width 0.2s ease;
+  z-index: 1;
+}
+
+#s-hover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.2;
+  background-color: #3b3d50;
+  z-index: 2;
+}
+
+/* Seek time tooltip */
+#seek-time {
+  position: absolute;
+  top: -29px;
+  color: #fff;
+  font-size: 10px;
+  white-space: nowrap;
+  padding: 4px 5px;
+  border-radius: 4px;
+  background-color: #3b3d50;
+  display: none;
+  z-index: 3;
+}
+
+/* Track time */
+#track-time {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #f86d92;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Controls */
+#player-controls {
+  display: flex;
+  gap: 6px;
+  margin-left: 8px;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+.button {
+  width: 24px;
+  height: 24px;
+  background-color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+.button i {
+  color: #d6dee7;
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+
+.button:hover {
+  background-color: #d6d6de;
+}
+
+.button:hover i {
+  color: #fff;
 }

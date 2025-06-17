@@ -27,9 +27,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-
-    <!-- Three.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r148/three.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Custom Styles -->
     <link rel="stylesheet" href="style.css" />
@@ -52,13 +50,6 @@
           <li><a href="#contact" class="nav-link">Contact</a></li>
           <li><a href="index-th.html" class="nav-link">TH</a></li>
         </ul>
-        <div class="footer-sound" id="footerSound">
-          <span id="bar-1" class="sbar"></span>
-          <span id="bar-2" class="sbar"></span>
-          <span id="bar-3" class="sbar"></span>
-          <span id="bar-4" class="sbar"></span>
-        </div>
-
         <div class="nav-toggle" id="nav-toggle">
           <span class="bar"></span>
           <span class="bar"></span>
@@ -425,6 +416,69 @@
         </div>
       </div>
     </section>
+
+    <!-- element player -->
+    <div id="player">
+      <!-- Album art -->
+      <div id="album-art">
+        <img
+          src="https://singhimalaya.github.io/Codepen/assets/img/album-arts/1.jpg"
+          class="active"
+          id="_1"
+        />
+        <img
+          src="https://singhimalaya.github.io/Codepen/assets/img/album-arts/2.jpg"
+          id="_2"
+        />
+        <img
+          src="https://singhimalaya.github.io/Codepen/assets/img/album-arts/3.jpg"
+          id="_3"
+        />
+        <img
+          src="https://singhimalaya.github.io/Codepen/assets/img/album-arts/4.jpg"
+          id="_4"
+        />
+        <img
+          src="https://singhimalaya.github.io/Codepen/assets/img/album-arts/5.jpg"
+          id="_5"
+        />
+        <div id="buffer-box">Buffering ...</div>
+      </div>
+
+      <!-- Track info and seek bar -->
+      <div id="player-track">
+        <div id="album-name">Album Name Here</div>
+        <div id="track-name">Track Name Here</div>
+        <div id="track-time">
+          <div id="current-time">0:00</div>
+          <div id="track-length">3:45</div>
+        </div>
+        <div id="seek-bar-container">
+          <div id="seek-time"></div>
+          <div id="s-hover"></div>
+          <div id="seek-bar"></div>
+        </div>
+      </div>
+
+      <!-- Player controls -->
+      <div id="player-controls">
+        <div class="control">
+          <div class="button" id="play-previous">
+            <i class="fas fa-backward"></i>
+          </div>
+        </div>
+        <div class="control">
+          <div class="button" id="play-pause-button">
+            <i class="fas fa-play"></i>
+          </div>
+        </div>
+        <div class="control">
+          <div class="button" id="play-next">
+            <i class="fas fa-forward"></i>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
