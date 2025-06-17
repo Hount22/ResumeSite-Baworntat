@@ -1,45 +1,478 @@
-<!--
-  Hit RUN to see this project in action!
-  
-  This project will auto-refresh as you edit the HTML, CSS and JS. See README.md for more info (including how to disable auto-refresh and install packages).
--->
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Professional resume website - Software Developer"
+        />
+        <meta
+            name="keywords"
+            content="software developer, portfolio, resume, web developer"
+        />
+        <meta name="author" content="Baworntat Amgruit" />
+        <title>Your Name - Software Developer</title>
 
-<!DOCTYPE html>
-<html>
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-</head>
+        <!-- Font Awesome Icons -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
 
-<body>
-  <main>
-    <h1 class="title">Welcome to HTML on Replit!</h1>
-    <p class="description">Get started by editing
-      <code class="code">index.html</code>. The webview will auto-refresh as you edit! (See <code
-        class="code">README.md</code> if you want to
-      disable auto-refresh.)
-    </p>
+        <!-- Custom Styles -->
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav class="nav" id="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="#hero">YN</a>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#hero" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li>
+                        <a href="#experience" class="nav-link">Experience</a>
+                    </li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
 
-    <section class="grid">
-      <a href="https://replit.com/learn" class='card'>
-        <h2>Learn &rarr;</h2>
-        <p>Find tutorials on Replit to learn more.</p>
-      </a>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="hero-greeting">Hello, I'm</span>
+                        <span class="hero-name">Your Name</span>
+                    </h1>
+                    <p class="hero-subtitle">Full-Stack Software Developer</p>
+                    <p class="hero-description">
+                        I create exceptional digital experiences through clean
+                        code and innovative solutions. Passionate about building
+                        scalable applications that make a difference.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary"
+                            >Get In Touch</a
+                        >
+                        <a href="#projects" class="btn btn-secondary"
+                            >View Work</a
+                        >
+                    </div>
+                </div>
+                <div class="hero-scroll">
+                    <a href="#about" class="scroll-indicator">
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
 
-      <a href="https://docs.replit.com/category/deployments" class='card'>
-        <h2>Deploy &rarr;</h2>
-        <p>
-          After you are happy with this app, deploy it on Replit!
-        </p>
-      </a>
-    </section>
-  </main>
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>
+                            I'm a passionate software developer with over 5
+                            years of experience creating digital solutions that
+                            bridge the gap between design and functionality. My
+                            journey began with a curiosity for how things work,
+                            which led me to pursue computer science and develop
+                            expertise in both frontend and backend technologies.
+                        </p>
+                        <p>
+                            When I'm not coding, you can find me exploring new
+                            technologies, contributing to open-source projects,
+                            or sharing knowledge with the developer community. I
+                            believe in writing clean, maintainable code and
+                            creating user experiences that are both beautiful
+                            and functional.
+                        </p>
+                        <div class="about-stats">
+                            <div class="stat">
+                                <span class="stat-number">50+</span>
+                                <span class="stat-label"
+                                    >Projects Completed</span
+                                >
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">5+</span>
+                                <span class="stat-label">Years Experience</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">100%</span>
+                                <span class="stat-label"
+                                    >Client Satisfaction</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <script type="module" src="script.js"></script>
+        <!-- Experience Section -->
+        <section class="experience" id="experience">
+            <div class="container">
+                <h2 class="section-title">Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">
+                                Senior Full-Stack Developer
+                            </h3>
+                            <h4 class="timeline-company">
+                                Tech Innovations Inc.
+                            </h4>
+                            <span class="timeline-period">2022 - Present</span>
+                            <p class="timeline-description">
+                                Lead development of scalable web applications
+                                using React, Node.js, and AWS. Mentored junior
+                                developers and implemented CI/CD pipelines that
+                                reduced deployment time by 60%.
+                            </p>
+                            <ul class="timeline-achievements">
+                                <li>
+                                    Architected microservices handling 1M+ daily
+                                    requests
+                                </li>
+                                <li>Improved application performance by 40%</li>
+                                <li>
+                                    Led team of 5 developers on major product
+                                    launches
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
 
-</body>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Full-Stack Developer</h3>
+                            <h4 class="timeline-company">
+                                Digital Solutions LLC
+                            </h4>
+                            <span class="timeline-period">2020 - 2022</span>
+                            <p class="timeline-description">
+                                Developed and maintained multiple client
+                                projects using various technologies including
+                                Vue.js, Python Django, and PostgreSQL. Focused
+                                on creating responsive, user-friendly
+                                interfaces.
+                            </p>
+                            <ul class="timeline-achievements">
+                                <li>Built 15+ production applications</li>
+                                <li>
+                                    Reduced load times by 35% through
+                                    optimization
+                                </li>
+                                <li>
+                                    Implemented automated testing strategies
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
 
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Frontend Developer</h3>
+                            <h4 class="timeline-company">StartupXYZ</h4>
+                            <span class="timeline-period">2019 - 2020</span>
+                            <p class="timeline-description">
+                                Focused on creating engaging user interfaces and
+                                improving user experience. Worked closely with
+                                designers to implement pixel-perfect designs
+                                using modern CSS and JavaScript frameworks.
+                            </p>
+                            <ul class="timeline-achievements">
+                                <li>Increased user engagement by 25%</li>
+                                <li>Implemented responsive design patterns</li>
+                                <li>
+                                    Collaborated with UX team on user research
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills" id="skills">
+            <div class="container">
+                <h2 class="section-title">Skills & Technologies</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3 class="skill-category-title">Frontend</h3>
+                        <div class="skill-items">
+                            <span class="skill-item">JavaScript (ES6+)</span>
+                            <span class="skill-item">TypeScript</span>
+                            <span class="skill-item">React.js</span>
+                            <span class="skill-item">Vue.js</span>
+                            <span class="skill-item">HTML5 & CSS3</span>
+                            <span class="skill-item">Sass/SCSS</span>
+                            <span class="skill-item">Tailwind CSS</span>
+                            <span class="skill-item">Webpack</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="skill-category-title">Backend</h3>
+                        <div class="skill-items">
+                            <span class="skill-item">Node.js</span>
+                            <span class="skill-item">Python</span>
+                            <span class="skill-item">Express.js</span>
+                            <span class="skill-item">Django</span>
+                            <span class="skill-item">REST APIs</span>
+                            <span class="skill-item">GraphQL</span>
+                            <span class="skill-item">PostgreSQL</span>
+                            <span class="skill-item">MongoDB</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="skill-category-title">Tools & DevOps</h3>
+                        <div class="skill-items">
+                            <span class="skill-item">Git</span>
+                            <span class="skill-item">Docker</span>
+                            <span class="skill-item">AWS</span>
+                            <span class="skill-item">CI/CD</span>
+                            <span class="skill-item">Jest</span>
+                            <span class="skill-item">Linux</span>
+                            <span class="skill-item">Nginx</span>
+                            <span class="skill-item">Redis</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="skill-category-title">Design & Other</h3>
+                        <div class="skill-items">
+                            <span class="skill-item">Figma</span>
+                            <span class="skill-item">Adobe XD</span>
+                            <span class="skill-item">UI/UX Design</span>
+                            <span class="skill-item">Responsive Design</span>
+                            <span class="skill-item">Agile/Scrum</span>
+                            <span class="skill-item">Team Leadership</span>
+                            <span class="skill-item">Code Review</span>
+                            <span class="skill-item">Mentoring</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects" id="projects">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a
+                                        href="#"
+                                        class="project-link"
+                                        aria-label="View Live Demo"
+                                    >
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a
+                                        href="#"
+                                        class="project-link"
+                                        aria-label="View Source Code"
+                                    >
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">E-Commerce Platform</h3>
+                            <p class="project-description">
+                                Full-stack e-commerce solution with React
+                                frontend, Node.js backend, and integrated
+                                payment processing. Features include user
+                                authentication, product management, and order
+                                tracking.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">Stripe API</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a
+                                        href="#"
+                                        class="project-link"
+                                        aria-label="View Live Demo"
+                                    >
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a
+                                        href="#"
+                                        class="project-link"
+                                        aria-label="View Source Code"
+                                    >
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Task Management App</h3>
+                            <p class="project-description">
+                                Collaborative project management tool with
+                                real-time updates, drag-and-drop functionality,
+                                and team collaboration features. Built with
+                                Vue.js and Firebase.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">Firebase</span>
+                                <span class="tech-tag">Vuex</span>
+                                <span class="tech-tag">Chart.js</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a
+                                        href="#"
+                                        class="project-link"
+                                        aria-label="View Live Demo"
+                                    >
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a
+                                        href="#"
+                                        class="project-link"
+                                        aria-label="View Source Code"
+                                    >
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">
+                                Weather Analytics Dashboard
+                            </h3>
+                            <p class="project-description">
+                                Data visualization dashboard displaying weather
+                                patterns and analytics. Features interactive
+                                charts, location-based forecasts, and historical
+                                data analysis with Python backend.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Django</span>
+                                <span class="tech-tag">D3.js</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2 class="section-title">Let's Work Together</h2>
+                <div class="contact-content">
+                    <div class="contact-text">
+                        <p>
+                            I'm always interested in new opportunities and
+                            exciting projects. Whether you have a question, want
+                            to collaborate, or just want to say hello, I'd love
+                            to hear from you.
+                        </p>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <a href="mailto:your.email@example.com"
+                                    >your.email@example.com</a
+                                >
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div class="contact-details">
+                                <h4>Phone</h4>
+                                <a href="tel:+1234567890">+1 (234) 567-890</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="contact-details">
+                                <h4>Location</h4>
+                                <span>San Francisco, CA</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Portfolio">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2025 Your Name. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <!-- JavaScript -->
+        <script src="script.js"></script>
+    </body>
 </html>
