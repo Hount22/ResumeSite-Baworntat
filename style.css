@@ -516,6 +516,13 @@ section {
   overflow: hidden;
 }
 
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* ทำให้รูปไม่บิดเบี้ยวและครอบเต็มพื้นที่ */
+}
+
 .project-image::before {
   content: '';
   position: absolute;
@@ -897,7 +904,8 @@ section {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 300px; /* ลดขนาดลง */
+  width: 300px;
+  /* ลดขนาดลง */
   z-index: 9999;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
   border-radius: 15px;
@@ -910,7 +918,8 @@ section {
   align-items: center;
   padding: 10px;
   gap: 10px;
-  height: 90px; /* สูงพอดี ไม่กินที่ */
+  height: 90px;
+  /* สูงพอดี ไม่กินที่ */
 }
 
 #album-art img {
