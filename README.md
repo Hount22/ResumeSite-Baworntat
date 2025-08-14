@@ -1,27 +1,43 @@
-# HTML, CSS, JS (Auto Refresh)
+# Personal Resume Website
 
-This template is a starter for building a website with HTML, CSS and JS, powered by [Vite](https://vitejs.dev/). HTML provides the basic structure, CSS controls formatting, and JavaScript controls the behavior of different elements.
+This is the source code for my personal resume website. It's a static website built with HTML, CSS, and JavaScript, and enhanced with Bootstrap and Three.js for a dynamic and responsive experience.
 
-Hit run to see this project in action. It will auto-refresh as you edit the HTML, CSS and JS files.
+**Live Demo:** [https://gregarious-scone-48d184.netlify.app/](https://gregarious-scone-48d184.netlify.app/)
 
-## Disable Auto Refresh
+## Features
 
-If you find the auto refresh getting in your way, go to [vite.config.js](./vite.config.js) and update it set `hmr` to false to disable hot module reloading (HMR). The full config will look like this:
+*   **Responsive Design:** Looks great on all devices, from mobile phones to desktops.
+*   **Two Languages:** Available in both English and Thai.
+*   **Interactive Background:** A cool animated galaxy background using Three.js.
+*   **Modern UI:** Clean and modern design using Bootstrap components.
+*   **Dynamic Navbar:** A transparent navbar that becomes solid on scroll.
 
-```js
-export default defineConfig({
-  plugins: [],
-  server: {
-    host: '0.0.0.0',
-    hmr: false, // Change this line to `false` disable auto-refreshing.
-  }
-})
-```
+## Technologies Used
 
-## Packages
+*   HTML5
+*   CSS3 (with custom properties)
+*   JavaScript (ES6)
+*   [Bootstrap 5](https://getbootstrap.com/)
+*   [Three.js](https://threejs.org/)
 
-Because this template uses Vite to build your code, you can add install and use npm packages. Simple open the Packager tool to search and manage your packages.
+## Getting Started
 
-## Learn More
+To run this website locally, you don't need any special build steps or servers.
 
-Check out [the vite docs](https://vitejs.dev) to learn more about configuring a frontend application.
+1.  **Clone the repository:**
+    ```bash
+    git clone <repository-url>
+    ```
+2.  **Navigate to the project directory:**
+    ```bash
+    cd ResumeSite-Baworntat
+    ```
+3.  **Open the website:**
+    Simply open the `index.html` or `index-th.html` file in your web browser.
+
+    For example, on Windows, you can just double-click the file. On macOS or Linux, you can use the `open` command:
+    ```bash
+    open index.html
+    ```
+
+That's it! The website should now be running in your local browser.
