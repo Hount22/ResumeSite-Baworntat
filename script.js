@@ -263,17 +263,125 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Project cards hover effect
+  // Project data for modal
+  const projectsData = {
+    "project-1": {
+      image: "/308106481_511939904271837_2657548268112879787_n.png",
+      title: "E-Commerce Platform",
+      description: "Full-stack construction e-commerce platform built with WordPress and WooCommerce. Features include product catalog management, quote request system, branch-based contact forms, and responsive design for mobile.<br>Integrated with Line OA and Google Maps to support local business communication and logistics.",
+      tech: ["HTML5&CSS3", "JavaScript", "PHP", "MySQL"],
+      links: [
+        { icon: "fas fa-external-link-alt", url: "https://www.sathaponhomemart.com/", label: "View Live Demo" },
+        { icon: "fab fa-facebook-f", url: "https://www.facebook.com/profile.php?id=100063674945752", label: "Facebook" }
+      ]
+    },
+    "project-2": {
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRemVX8xrlGkgTUvjI9Gg80dBvWVcwRtYSNeg&s",
+      title: "Flowdoo Web Backend Management",
+      description: "Managed the internal web platform for Meekhwamsook, a Thai bubble tea franchise with over 137 branches. Responsibilities included maintaining the Flowdoo (Odoo-based) backend system, managing daily operations, and supporting franchisees with system usage. Oversaw order processing, inventory reporting, and internal database updates. Also coordinated with the development team to improve system usability and provided basic training to new franchise branches.",
+      tech: ["Flowdoo(Odoo ERP)", "PostgreSQL", "Inventory & Sales Modules", "Web-based ERP Dashboard"],
+      links: [
+        { icon: "fas fa-external-link-alt", url: "https://meekhwamsook.flowdoo.co/web/login?redirect=%2Fshop%3F", label: "View Live Demo" },
+        { icon: "fab fa-facebook-f", url: "https://www.facebook.com/meekhwamsook/?locale=th_TH", label: "Facebook" }
+      ]
+    },
+    "project-3": {
+      image: "/490364361_1187718190025913_172603159380919610_n.jpg",
+      title: "HTOO Live Concert Event Management",
+      description: "Planned and coordinated the HTOO live concert event at Baan Fah Le Marché, including logistics, stage setup, artist coordination, and marketing promotion. Oversaw both digital and offline campaigns to drive attendance. Managed vendor communication, equipment setup, and worked closely with local authorities to ensure smooth event operations. Contributed to on-site operations and team supervision on the event day.",
+      tech: ["The Concert"],
+      links: [
+        { icon: "fas fa-external-link-alt", url: "https://www.facebook.com/BaanFahLeMarche", label: "View Live Demo" },
+        { icon: "fab fa-facebook-f", url: "https://www.facebook.com/watch/?v=376021895421140", label: "Facebook" }
+      ]
+    }
+  };
+
+  // Modal elements
+  const modalOverlay = document.querySelector(".modal-overlay");
+  const projectModal = document.querySelector(".project-modal");
+  const modalCloseBtn = document.querySelector(".modal-close-btn");
+  const modalProjectImage = document.querySelector(".modal-project-image");
+  const modalProjectTitle = document.querySelector(".modal-project-title");
+  const modalProjectDescription = document.querySelector(".modal-project-description");
+  const modalProjectTech = document.querySelector(".modal-project-tech");
+  const modalProjectLinks = document.querySelector(".modal-project-links");
+
+  // Function to open modal
+  function openProjectModal(projectId) {
+    const project = projectsData[projectId];
+    if (!project) return;
+
+    modalProjectImage.src = project.image;
+    modalProjectTitle.textContent = project.title;
+    modalProjectDescription.innerHTML = project.description; // Use innerHTML for <br> tags
+
+    // Populate tech tags
+    modalProjectTech.innerHTML = "";
+    project.tech.forEach(tag => {
+      const span = document.createElement("span");
+      span.classList.add("tech-tag"); // Reusing existing tech-tag class
+      span.textContent = tag;
+      modalProjectTech.appendChild(span);
+    });
+
+    // Populate links
+    modalProjectLinks.innerHTML = "";
+    project.links.forEach(link => {
+      const a = document.createElement("a");
+      a.href = link.url;
+      a.classList.add("project-link"); // Reusing existing project-link class
+      a.setAttribute("aria-label", link.label);
+      a.setAttribute("target", "_blank");
+      a.setAttribute("rel", "noopener noreferrer");
+      const i = document.createElement("i");
+      i.classList.add(...link.icon.split(" "));
+      a.appendChild(i);
+      modalProjectLinks.appendChild(a);
+    });
+
+    modalOverlay.style.display = "flex"; // Use flex to center modal
+    projectModal.style.display = "block";
+    document.body.style.overflow = "hidden"; // Prevent scrolling background
+  }
+
+  // Function to close modal
+  function closeProjectModal() {
+    modalOverlay.style.display = "none";
+    projectModal.style.display = "none";
+    document.body.style.overflow = ""; // Restore scrolling
+  }
+
+  // Event listeners for project cards
+  function initProjectModalListeners() {
+    const projectCards = document.querySelectorAll(".project-card");
+    projectCards.forEach(card => {
+      card.addEventListener("click", function() {
+        const projectId = this.dataset.projectId;
+        openProjectModal(projectId);
+      });
+    });
+
+    // Close modal listeners
+    modalCloseBtn.addEventListener("click", closeProjectModal);
+    modalOverlay.addEventListener("click", function(e) {
+      if (e.target === modalOverlay) { // Only close if clicking on the overlay itself, not the modal content
+        closeProjectModal();
+      }
+    });
+  }
+
+  // Project cards hover effect (modified to not interfere with click)
   function initProjectCards() {
     const projectCards = document.querySelectorAll(".project-card");
 
     projectCards.forEach((card) => {
       card.addEventListener("mouseenter", function () {
-        this.style.transform = "translateY(-10px) scale(1.02)";
+        this.style.transform = "translateY(-10px)"; // Removed scale(1.02) to be subtle
       });
 
       card.addEventListener("mouseleave", function () {
-        this.style.transform = "translateY(0) scale(1)";
+        this.style.transform = "translateY(0)"; // Removed scale(1)
       });
     });
   }
@@ -323,8 +431,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize all animations and effects
   initScrollAnimations();
   initSkillsAnimation();
-  initProjectCards();
+  initProjectCards(); // Keep this for hover effect
   initContactAnimations();
+  initProjectModalListeners(); // New: Initialize modal listeners
 
   // Initialize typing animation for hero
   // initTypingAnimation(); // Uncomment if you want typing effect

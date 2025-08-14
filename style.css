@@ -414,61 +414,35 @@ section {
 
 /* Experience Section */
 .timeline {
-  max-width: 800px;
-  margin: 0 auto;
-  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Aim for 2 columns, not too wide */
+  gap: 2rem; /* Spacing between items */
+  max-width: 1200px; /* Constrain overall width */
+  margin: 0 auto; /* Center the grid */
 }
 
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 30px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: var(--border-color);
-}
+
 
 .timeline-item {
-  position: relative;
-  margin-bottom: 3rem;
-  padding-left: 80px;
+  max-width: 500px; /* Prevent individual items from becoming too wide */
+  margin: 0 auto; /* Center item within its grid cell */
+  /* Removed flex and scroll-snap properties */
+  margin-bottom: 0; /* Keep existing margin-bottom */
+  padding-left: 0; /* Keep existing padding-left */
 }
 
-.timeline-marker {
-  position: absolute;
-  left: 22px;
-  top: 0;
-  width: 16px;
-  height: 16px;
-  background: var(--primary-color);
-  border-radius: 50%;
-  border: 4px solid var(--background-primary);
-}
+
 
 .timeline-content {
   background: var(--background-secondary);
-  padding: 2rem;
+  padding: 2rem; /* Reverted to original padding */
   border-radius: 12px;
-  position: relative;
   transition: var(--transition);
 }
 
 .timeline-content:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow);
-}
-
-.timeline-content::before {
-  content: '';
-  position: absolute;
-  left: -10px;
-  top: 20px;
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-right: 10px solid var(--background-secondary);
 }
 
 .timeline-title {
@@ -518,7 +492,7 @@ section {
 
 /* Skills Section */
 .skills {
-  background: transparent;
+  background: var(--background-secondary);
 }
 
 .skills-grid {
@@ -926,21 +900,7 @@ section {
     padding: 4rem 0;
   }
 
-  .timeline::before {
-    left: 15px;
-  }
-
-  .timeline-item {
-    padding-left: 50px;
-  }
-
-  .timeline-marker {
-    left: 7px;
-  }
-
-  .timeline-content::before {
-    left: -10px;
-  }
+  
 
   .contact-item {
     flex-direction: column;

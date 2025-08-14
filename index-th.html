@@ -27,8 +27,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <!-- Three.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r148/three.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Custom Styles -->
     <link rel="stylesheet" href="style.css" />
@@ -78,6 +77,7 @@
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
+      <div id="starfield-container"></div>
       <div class="hero-container">
         <div class="hero-content">
           <h1 class="hero-title">
@@ -108,7 +108,7 @@
         <div class="about-content">
           <div class="about-text">
             <p>
-              ผมมีประสบการณ์ด้าน IT Support และ Digital Marketing โดยเคยดูแลระบบโครงสร้างพื้นฐานขององค์กร (Network, VMware, ERP – Odoo) พร้อมทั้งบริหารงานการตลาดและ CRM ให้กับแบรนด์เครื่องดื่มในระดับแฟรนไชส์กว่า 130 สาขา
+              ผมมีประสบการณ์ด้าน IT Support และ Digital Marketing โดยเคยดูแลระบบโครงสร้างพื้นฐานขององค์กร (Network, VMware, ERP – Odoo) พร้อมทั้งบริหารงานการตลาดและ CRM ให้กับแบรนด์เครื่องดื่ม<br>ในระดับแฟรนไชส์กว่า 130 สาขา
 <br>
               หน้าที่ของผมครอบคลุมตั้งแต่การวางระบบหลังบ้าน ตรวจสอบการทำงานของเว็บแอป ไปจนถึงการวางแผนแคมเปญการตลาดให้สอดรับกับระบบดิจิทัลทั้งหมด ผมมีจุดแข็งในการเชื่อมต่อระหว่าง “เทคโนโลยี” กับ “ผู้ใช้งาน” เพื่อให้ระบบทำงานได้ราบรื่น และทีมสามารถสร้างผลลัพธ์ได้อย่างมีประสิทธิภาพ
             </p>
@@ -462,6 +462,19 @@
         </div>
     </section>
 
+        <!-- Project Modal Structure -->
+        <div class="modal-overlay"></div>
+        <div class="project-modal">
+            <button class="modal-close-btn">&times;</button>
+            <div class="modal-content-wrapper">
+                <img src="" alt="Project Image" class="modal-project-image">
+                <h3 class="modal-project-title"></h3>
+                <p class="modal-project-description"></p>
+                <div class="modal-project-tech"></div>
+                <div class="modal-project-links"></div>
+            </div>
+        </div>
+
     <!-- Footer -->
     <footer class="footer">
       <div class="container">
@@ -470,6 +483,8 @@
     </footer>
 
     <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="script.js"></script>
+    <script src="galaxy/script.js"></script>
   </body>
 </html>
