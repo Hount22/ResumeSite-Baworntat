@@ -206,7 +206,21 @@ body {
   display: flex;
   align-items: center;
   position: relative;
-  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+  /* background will be handled by Three.js starfield */
+}
+
+#starfield-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* Ensure it's behind other content */
+}
+
+#starfield-container canvas {
+  display: block; /* Remove extra space below canvas */
 }
 
 .hero-container {
@@ -504,12 +518,12 @@ section {
 
 /* Skills Section */
 .skills {
-  background: var(--background-secondary);
+  background: transparent;
 }
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
 
